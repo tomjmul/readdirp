@@ -16,8 +16,8 @@ declare namespace readdir {
 
   interface ReaddirpOptions {
     root?: string;
-    fileFilter?: string | string[] | ((entry: EntryInfo) => boolean);
-    directoryFilter?: string | string[] | ((entry: EntryInfo) => boolean);
+    fileFilter?: string | string[] | ((entry: EntryInfo) => Promise<boolean>);
+    directoryFilter?: string | string[] | ((entry: EntryInfo) => Promise<boolean>);
     type?: 'files' | 'directories' | 'files_directories' | 'all';
     lstat?: boolean;
     depth?: number;
